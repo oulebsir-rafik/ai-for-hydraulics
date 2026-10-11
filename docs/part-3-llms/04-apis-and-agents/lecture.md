@@ -5,7 +5,7 @@ title: Lecture
 
 # APIs & Agents — Lecture
 
-:::info 🔑 Subscription required
+:::info[🔑 Subscription required]
 
 This section requires your own subscription (e.g. Claude Pro, ChatGPT Plus) or API credits. It is optional.
 
