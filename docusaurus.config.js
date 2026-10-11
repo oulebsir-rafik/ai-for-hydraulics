@@ -1,0 +1,110 @@
+// @ts-check
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// See: https://docusaurus.io/docs/api/docusaurus-config
+
+import {themes as prismThemes} from 'prism-react-renderer';
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  title: 'AI for Hydraulics',
+  tagline: 'Applying artificial intelligence to hydraulics',
+  favicon: 'img/favicon.ico',
+
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
+  url: 'https://oulebsir-rafik.github.io',
+  baseUrl: '/ai-for-hydraulics/',
+
+  // GitHub Pages deployment (via GitHub Actions, see .github/workflows/deploy.yml)
+  organizationName: 'oulebsir-rafik',
+  projectName: 'ai-for-hydraulics',
+  trailingSlash: false,
+
+  onBrokenLinks: 'throw',
+
+  // French will be added once the English version is finished.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        docs: {
+          sidebarPath: './sidebars.js',
+          editUrl: 'https://github.com/oulebsir-rafik/ai-for-hydraulics/tree/main/',
+        },
+        blog: false,
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      }),
+    ],
+  ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      image: 'img/logo.png',
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
+      navbar: {
+        title: 'AI for Hydraulics',
+        logo: {
+          alt: 'AI for Hydraulics Logo',
+          src: 'img/logo.png',
+          srcDark: 'img/logo-dark.png',
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'courseSidebar',
+            position: 'left',
+            label: 'Course',
+          },
+          {
+            href: 'https://github.com/oulebsir-rafik/ai-for-hydraulics',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Course',
+            items: [
+              {label: 'Overview', to: '/docs/intro'},
+              {label: 'Part 1 — Data Manipulation', to: '/docs/part-1-data-manipulation'},
+              {label: 'Part 2 — Preprocessing & Supervised Learning', to: '/docs/part-2-machine-learning'},
+              {label: 'Part 3 — LLMs for Engineering Work', to: '/docs/part-3-llms'},
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {label: 'GitHub', href: 'https://github.com/oulebsir-rafik/ai-for-hydraulics'},
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} USTHB — AI for Hydraulics. Built with Docusaurus.`,
+      },
+      prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
+    }),
+};
+
+export default config;
